@@ -8,13 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import training.id.co.pegadaian.training.R;
+import training.id.co.pegadaian.training.util.FragmentListener;
 
-
-public class FragmentHargaEmas extends Fragment {
+public class FragmentInquiry extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_harga_emas, container, false);
-
+        View view = inflater.inflate(R.layout.fr_inquiry, container, false);
+        return view;
     }
 }

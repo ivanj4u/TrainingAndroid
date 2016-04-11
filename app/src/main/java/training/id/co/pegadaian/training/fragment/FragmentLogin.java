@@ -8,27 +8,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import training.id.co.pegadaian.training.AfterLogin;
 import training.id.co.pegadaian.training.R;
+import training.id.co.pegadaian.training.util.FragmentListener;
 
 /**
  * Created by EJM TI on 4/11/2016.
  */
-public class FragmentLogin extends Fragment {
+public class FragmentLogin extends Fragment implements FragmentListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.fragment_login, container,false);
+        View fragmentView = inflater.inflate(R.layout.fr_login, container,false);
+        setListener(fragmentView);
+        return fragmentView;
+    }
 
-        Button btnLogin = (Button) fragmentView.findViewById(R.id.btnLogin);
+    @Override
+    public void setListener(View view) {
+        final EditText txtUserName = (EditText) view.findViewById(R.id.txtUsername);
+        EditText txtPassword = (EditText) view.findViewById(R.id.txtPassword);
+
+        Button btnLogin = (Button) view.findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent AfterLogin = new Intent(getContext(), training.id.co.pegadaian.training.AfterLogin);
-                startActivity(training.id.co.pegadaian.training.AfterLogin);
+                Intent intent = new Intent(getContext(), AfterLogin.class);
+                intent.putExtra("username", txtUserName.getText().toString());
+                startActivity(intent);
             }
         });
-        return fragmentView;
     }
 }

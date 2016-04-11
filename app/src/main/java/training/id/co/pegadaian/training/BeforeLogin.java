@@ -1,6 +1,5 @@
 package training.id.co.pegadaian.training;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import training.id.co.pegadaian.training.fragment.FragmentHargaEmas;
+import training.id.co.pegadaian.training.fragment.FragmentInquiry;
 import training.id.co.pegadaian.training.fragment.FragmentHome;
 import training.id.co.pegadaian.training.fragment.FragmentLogin;
 import training.id.co.pegadaian.training.fragment.FragmentRegistrasi;
@@ -75,12 +74,13 @@ public class BeforeLogin extends AppCompatActivity
 
         if (id == R.id.nav_sign_in) {
             loadFragment(new FragmentLogin());
+            setTitle(getString(R.string.menu_login));
         } else if (id == R.id.nav_inquiry) {
-            loadFragment(new FragmentHargaEmas());
-
+            loadFragment(new FragmentInquiry());
+            setTitle(getString(R.string.menu_inquiry));
         } else if (id == R.id.nav_sign_up) {
             loadFragment(new FragmentRegistrasi());
-
+            setTitle(getString(R.string.menu_signup));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -13,7 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import training.id.co.pegadaian.training.fragment.FragmentHargaEmas;
+import training.id.co.pegadaian.training.fragment.FragmentHome;
 import training.id.co.pegadaian.training.fragment.FragmentLogin;
+import training.id.co.pegadaian.training.fragment.FragmentRegistrasi;
 
 public class BeforeLogin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,7 +37,7 @@ public class BeforeLogin extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadFragment(new FragmentLogin());
+        loadFragment(new FragmentHome());
 
     }
 
@@ -71,10 +74,12 @@ public class BeforeLogin extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_sign_in) {
-            // Handle the camera action
+            loadFragment(new FragmentLogin());
         } else if (id == R.id.nav_inquiry) {
+            loadFragment(new FragmentHargaEmas());
 
         } else if (id == R.id.nav_sign_up) {
+            loadFragment(new FragmentRegistrasi());
 
         }
 

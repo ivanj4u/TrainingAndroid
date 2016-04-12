@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import training.id.co.pegadaian.training.fragment.FragmentHistory;
 import training.id.co.pegadaian.training.fragment.FragmentHome;
 
 public class AfterLogin extends AppCompatActivity
@@ -77,7 +78,7 @@ public class AfterLogin extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_history) {
-
+            loadFragment(new FragmentHistory(), R.string.menu_history);
         } else if (id == R.id.nav_deposit) {
 
         } else if (id == R.id.nav_buyback) {

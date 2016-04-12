@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/lblUser"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Nama Nasabah" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/lblRekening"
+        android:layout_below="@+id/lblUser"
+        android:layout_centerHorizontal="true"
+        android:hint="No Rekening" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tgl Transaksi"
+        android:id="@+id/textView"
+        android:layout_below="@+id/lblRekening"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mutasi Masuk"
+        android:id="@+id/textView8"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mutasi Keluar"
+        android:id="@+id/textView9"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Total Transaksi"
+        android:id="@+id/textView10"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=":"
+        android:id="@+id/textView11"
+        android:layout_above="@+id/textView8"
+        android:layout_alignStart="@+id/lblRekening"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=":"
+        android:id="@+id/textView12"
+        android:layout_above="@+id/textView9"
+        android:layout_alignStart="@+id/lblRekening"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=":"
+        android:id="@+id/textView13"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_alignStart="@+id/lblRekening" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=":"
+        android:id="@+id/textView14"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/textView13"
+        android:layout_alignStart="@+id/lblRekening" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtTglTransaksi"
+        android:layout_alignTop="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11"
+        android:layout_marginStart="15dp"
+        android:hint="dd-MM-yyyy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtMutasiMasuk"
+        android:hint="Mutasi Masuk"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_alignStart="@+id/txtTglTransaksi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtTotalTransaksi"
+        android:hint="Total Transaksi"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_alignStart="@+id/txtMutasiMasuk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtMutasiKeluar"
+        android:hint="Mutasi Keluar"
+        android:layout_above="@+id/txtTotalTransaksi"
+        android:layout_alignStart="@+id/txtTotalTransaksi" />
+
+</RelativeLayout>

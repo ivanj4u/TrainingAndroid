@@ -10,4 +10,11 @@
         android:text="HISTORY TRANSAKSI"
         android:id="@+id/textView5"
         android:layout_gravity="center_horizontal" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listHistory"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

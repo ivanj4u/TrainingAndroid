@@ -3,6 +3,7 @@ package training.id.co.pegadaian.training;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -36,8 +37,7 @@ public class BeforeLogin extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadFragment(new FragmentHome());
-
+        loadFragment(new FragmentHome(), R.string.menu_home);
     }
 
     @Override
@@ -71,28 +71,23 @@ public class BeforeLogin extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_sign_in) {
-            loadFragment(new FragmentLogin());
-            setTitle(getString(R.string.menu_login));
+            loadFragment(new FragmentLogin(), R.string.menu_login);
         } else if (id == R.id.nav_inquiry) {
-            loadFragment(new FragmentInquiry());
-            setTitle(getString(R.string.menu_inquiry));
+            loadFragment(new FragmentInquiry(), R.string.menu_inquiry);
         } else if (id == R.id.nav_sign_up) {
-            loadFragment(new FragmentRegistrasi());
-            setTitle(getString(R.string.menu_signup));
+            loadFragment(new FragmentRegistrasi(), R.string.menu_signup);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void loadFragment(Fragment fr){
+    private void loadFragment(Fragment fr, int id){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager()
                 .beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fr);
         fragmentTransaction.commit();
+        setTitle(getString(id));
     }
-
 }

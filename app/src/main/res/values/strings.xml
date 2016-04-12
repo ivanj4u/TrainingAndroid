@@ -9,6 +9,7 @@
     <string name="title_activity_after_login">AfterLogin</string>
     <string name="title_activity_login">Sign in</string>
 
+    <string name="menu_home">Beranda</string>
     <string name="menu_login">Login</string>
     <string name="menu_inquiry">Cek Harga Emas</string>
     <string name="menu_signup">Pendaftaran User</string>

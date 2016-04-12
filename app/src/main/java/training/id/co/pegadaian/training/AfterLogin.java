@@ -40,7 +40,8 @@ public class AfterLogin extends AppCompatActivity
         TextView txt = (TextView) viewHeader.findViewById(R.id.txtUser);
         txt.setText(getIntent().getStringExtra("username"));
 
-        loadFragment(new FragmentHome());
+        loadFragment(new FragmentHome(), R.string.menu_home);
+
     }
 
     @Override
@@ -93,10 +94,11 @@ public class AfterLogin extends AppCompatActivity
         return true;
     }
 
-    private void loadFragment(Fragment fr) {
+    private void loadFragment(Fragment fr, int id) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager()
                 .beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fr);
+        fragmentTransaction.replace(R.id.fragment_container_after, fr);
         fragmentTransaction.commit();
+        setTitle(getString(id));
     }
 }

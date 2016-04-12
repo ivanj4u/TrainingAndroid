@@ -28,9 +28,6 @@ public class FragmentHistory extends Fragment {
         ListView listView = (ListView) view.findViewById(R.id.listHistory);
         listView.setAdapter(adapter);
 
-        TextView txtTotal = (TextView) view.findViewById(R.id.txtTotal);
-        txtTotal.setText(String.valueOf(adapter.getTotalTrx()));
-
         return view;
     }
 }

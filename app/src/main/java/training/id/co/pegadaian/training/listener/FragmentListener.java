@@ -1,4 +1,4 @@
-package training.id.co.pegadaian.training.util;
+package training.id.co.pegadaian.training.listener;
 
 import android.view.View;
 

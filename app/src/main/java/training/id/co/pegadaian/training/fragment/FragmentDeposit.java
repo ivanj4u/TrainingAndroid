@@ -6,10 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import training.id.co.pegadaian.training.R;
-import training.id.co.pegadaian.training.util.FragmentListener;
+import training.id.co.pegadaian.training.listener.FragmentListener;
 
 /**
  * Created by ivan_j4u on 4/11/2016.

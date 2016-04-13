@@ -1,5 +1,6 @@
-package training.id.co.pegadaian.training;
+package training.id.co.pegadaian.training.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -10,16 +11,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import training.id.co.pegadaian.training.R;
 import training.id.co.pegadaian.training.fragment.FragmentInquiry;
 import training.id.co.pegadaian.training.fragment.FragmentHome;
 import training.id.co.pegadaian.training.fragment.FragmentLogin;
 import training.id.co.pegadaian.training.fragment.FragmentRegistrasi;
+import training.id.co.pegadaian.training.service.TrainingRegisterGcmService;
 
 public class BeforeLogin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String TAG = "Before_Login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,12 @@ public class BeforeLogin extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         loadFragment(new FragmentHome(), R.string.menu_home);
+
+        // lakukan registrasi ke GCM untuk mendapatkan token
+        Log.d(TAG, "Menjalankan service registrasi GCM");
+        Intent intent = new Intent(this, TrainingRegisterGcmService.class);
+        startService(intent);
+
     }
 
     @Override

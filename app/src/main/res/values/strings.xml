@@ -17,6 +17,11 @@
     <string name="menu_deposit">Deposit</string>
     <string name="menu_buyback">Buyback</string>
 
+    <!-- String related to GCM -->
+    <string name="api_credential_key">AIzaSyBFD2akUcFQR5vCOIxDZ-IqbTfnhb78yos</string>
+    <string name="api_server_key">AIzaSyBGjceroRlxu0lb0_KVuo3JuXXUKJIVDDU</string>
+    <string name="api_sender_key">1076690999055</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>

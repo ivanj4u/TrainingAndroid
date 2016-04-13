@@ -6,29 +6,65 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permission Google Cloud Messaging (Google Services) -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <permission android:name="training.id.co.pegadaian.training.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="training.id.co.pegadaian.training.permission.C2D_MESSAGE" />
 
     <application
+        android:name=".ApplicationSQLite"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".BeforeLogin"
+            android:name=".activity.BeforeLogin"
             android:label="@string/title_activity_before_login"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".AfterLogin"
+            android:name=".activity.AfterLogin"
             android:label="@string/title_activity_after_login"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
+
+        <!-- Google Cloud Messaging Spec -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="training.id.co.pegadaian.training" />
+            </intent-filter>
+        </receiver>
+        <!-- Register GCM -->
+        <service android:name=".service.TrainingRegisterGcmService"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.RECEIVE">
+        </service>
+        <!-- Receive Token -->
+        <service android:name=".service.TrainingInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <!-- Receive GCM Message -->
+        <service android:name=".service.TrainingGcmHandlerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

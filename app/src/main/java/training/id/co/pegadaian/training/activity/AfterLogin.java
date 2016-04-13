@@ -1,4 +1,4 @@
-package training.id.co.pegadaian.training;
+package training.id.co.pegadaian.training.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import training.id.co.pegadaian.training.R;
 import training.id.co.pegadaian.training.fragment.FragmentHistory;
 import training.id.co.pegadaian.training.fragment.FragmentHome;
 

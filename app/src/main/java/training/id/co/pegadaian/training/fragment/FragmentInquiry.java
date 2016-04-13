@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import training.id.co.pegadaian.training.R;
-import training.id.co.pegadaian.training.util.FragmentListener;
 
 public class FragmentInquiry extends Fragment {
     @Nullable

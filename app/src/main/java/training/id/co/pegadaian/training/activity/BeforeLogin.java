@@ -25,8 +25,6 @@ import training.id.co.pegadaian.training.service.TrainingRegisterGcmService;
 public class BeforeLogin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "Before_Login";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +42,6 @@ public class BeforeLogin extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         loadFragment(new FragmentHome(), R.string.menu_home);
-
-        // lakukan registrasi ke GCM untuk mendapatkan token
-        Log.d(TAG, "Menjalankan service registrasi GCM");
-        Intent intent = new Intent(this, TrainingRegisterGcmService.class);
-        startService(intent);
-
     }
 
     @Override

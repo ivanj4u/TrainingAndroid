@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +19,12 @@ import android.widget.TextView;
 import training.id.co.pegadaian.training.R;
 import training.id.co.pegadaian.training.fragment.FragmentHistory;
 import training.id.co.pegadaian.training.fragment.FragmentHome;
+import training.id.co.pegadaian.training.service.TrainingRegisterGcmService;
 
 public class AfterLogin extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final static String TAG = "After Login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,10 @@ public class AfterLogin extends AppCompatActivity
 
         loadFragment(new FragmentHome(), R.string.menu_home);
 
+        // lakukan registrasi ke GCM untuk mendapatkan token
+        Log.d(TAG, "Menjalankan service registrasi GCM");
+        Intent intent = new Intent(this, TrainingRegisterGcmService.class);
+        startService(intent);
     }
 
     @Override
